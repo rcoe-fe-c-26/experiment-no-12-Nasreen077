@@ -8,16 +8,19 @@ print("--- Extracting Words from Text File ---\n")
 
 
 
-with open("story.txt","r") as file:
-  content=file.read().split()
-var = int(input("Enter Length of Words: "))
-l = []
+with open("story.txt", "r") as f:
+    words = f.read().split()
 
-for i in content:
-    i = i.lower().strip(".,!?")
-    if len(i) == var:
-        if i not in l:
-            l.append(i)
+n = int(input())
 
+result = []
 
-print("words with length", var, "are:", l)
+for word in words:
+    word = word.lower().strip(".,!?")
+    if len(word) == n and word not in result:
+        result.append(word)
+
+result.sort()
+
+print(result)
+
