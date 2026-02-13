@@ -6,6 +6,7 @@
 
 print("--- Extracting Words from Text File ---\n")
 
+
 with open("story.txt", "r") as f:
     words = f.read().split()
 
@@ -20,6 +21,6 @@ for word in words:
 
 result.sort()
 
-print("words with length",n,"are:",result)
+print("Following unique words of length", n, "present:", result)
 
 
