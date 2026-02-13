@@ -21,6 +21,7 @@ for word in words:
 
 result.sort()
 
-print("Following unique words of length", n, "present:", result)
+print("words with length", n, "are:", result)
+
 
 
