@@ -6,22 +6,17 @@
 
 print("--- Extracting Words from Text File ---\n")
 
+with open("story.txt","r") as file:
+    content = file.read()
+    words = content.split()
+    length = int(input("Enter Length of words: "))
+    unique_words =set()
+    
+    for word in words:
+        word = word.lower()
+        if len(word) == length:
+            unique_words.add(word)
+    result = sorted(unique_words)
 
-with open("story.txt", "r") as f:
-    words = f.read().split()
-
-n = int(input("Enter Length of Words: "))
-
-result = []
-
-for word in words:
-    word = word.lower().strip(".,!?")
-    if len(word) == n and word not in result:
-        result.append(word)
-
-result.sort()
-
-print("words with length", n, "are:", result)
-
-
+    print("Words with length",length, "are:",result)
 
